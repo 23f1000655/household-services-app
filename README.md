@@ -4,6 +4,12 @@ A multi-user web application built with Flask that connects customers with verif
 
 ---
 
+### Live Application
+- View the application live in the link below
+https://household-services-app-pohz.onrender.com/
+
+---
+
 ## Features
 
 ### Admin
