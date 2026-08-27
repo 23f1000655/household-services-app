@@ -1,0 +1,110 @@
+/* styles.css */
+body {
+    background-color: #fde9ea;
+    color: #20120c;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 90px;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #20120c;
+}
+
+p {
+    line-height: 1.6;
+}
+
+a {
+    color: #20120c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #20120c;
+    color: #fde9ea;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #3d2c26;
+}
+
+.login-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.text-center {
+    margin-bottom: 20px;
+}
+
+#login-btn, .register-btn {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.register-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+#register-btn {
+    width: 100%;
+}
+
+.jumbotron {
+    background-color: #fec7c4;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.jumbotron h1 {
+    font-family: 'Rubik Moonrocks';
+    color: #20120c;
+    font-size: 8rem;
+}
+
+.jumbotron p {
+    font-family: "Itim", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #20120c;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}

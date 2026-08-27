@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEENUS - Admin Summary</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Itim&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Rubik Moonrocks', sans-serif;
+            background-color: #fec7c4;
+        }
+        
+        .login-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: auto; /* Centers horizontally */
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .banner {
+            background-color: #20120c;
+            color: #fec7c4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .banner h1 {
+            font-family: 'Rubik Moonrocks', cursive;
+            font-size: 4em;
+            margin: 0;
+        }
+
+        .banner h2 {
+            font-family: 'Itim', cursive;
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            font-family: 'IBM Plex Serif', serif;
+            background-color: #3b189b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .nav-buttons a:hover {
+            transform: scale(1.1);
+            background-color: #5c3bca;
+        }
+        
+        .banner hr {
+            width: 40%;
+            margin: 10px auto;
+            border: 0;
+            border-top: 2px solid #fec7c4;
+        }
+
+        .charts-container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        .chart {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fec7c4;
+            width: 45%;
+            text-align: center;
+        }
+        .chart img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h1>Veenus</h1>
+        <h2>Admin Summary</h2>
+        <hr>
+
+        <div class="nav-buttons">
+            <a href="/admin_dashboard"><strong>Home</strong></a>
+            <a href="/admin_search"><strong>Search</strong></a>
+            <a href="/admin_summary"><strong>Summary</strong></a>
+            <a href="/"><strong>Logout</strong></a>
+        </div>
+    </div>
+    <div style="font-family: 'IBM Plex Serif', serif;">
+        <br>
+        <hr>
+        <div class="charts-container">
+            <div class="chart">
+                <h4>Overall Customer Ratings</h4>
+                <br>
+                <img src="{{ url_for('static', filename='ratings_chart.png') }}" alt="Ratings Chart">
+            </div>
+            <div class="chart">
+                <h4>Service Requests Summary</h4>
+                <br>
+                <img src="{{ url_for('static', filename='requests_chart.png') }}" alt="Requests Chart">
+            </div>
+        </div>
+    </div>
+</body>
+</html>    
