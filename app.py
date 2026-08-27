@@ -1,6 +1,8 @@
 from flask import *
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from sqlalchemy.sql import func
 from datetime import *
@@ -20,6 +22,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
+
+# Ensure required folders exist on the server
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs('static', exist_ok=True)
 
 # Utility to check allowed files
 def allowed_file(filename):
@@ -643,7 +649,13 @@ def customer_summary(username):
 
     return render_template('customer_summary.html',customer=customer, requests_chart=bar_img_url)
 
+with app.app_context():
+    db.create_all()
+    
+    if not Admin.query.filter_by(username='admin').first():
+        admin = Admin(username='admin', password='admin@098')
+        db.session.add(admin)
+        db.session.commit()
+
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
     app.run(debug=True)
